@@ -12,7 +12,7 @@ function BookSearch() {
     setLoading(true);
     try {
       const response = await fetch(
-        `${BASE_URL}?q=${encodeURIComponent(query)}`
+        `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}`
       );
       const data = await response.json();
       setBooks(data.items || []);
